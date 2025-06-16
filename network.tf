@@ -37,7 +37,7 @@ resource "aws_subnet" "Web02" {
 resource "aws_subnet" "db1" {
     vpc_id                  = aws_vpc.testvpc.id
     cidr_block              = var.db1_cidr_range
-    availability_zone       = var.db1_cidr_range
+    availability_zone       = var.db1_az
 
     tags                    = {
         Name                = "db1-tf"
