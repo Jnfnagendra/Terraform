@@ -1,14 +1,14 @@
 # Lets try to define the resources to the VPC
 
 resource "aws_vpc" "testvpc" {
-    cidr_block              = "192.168.0.0/16"
+    cidr_block              = var.vpc_cidr_range
 
     tags                    = {
         "Name"              = "HTCTestVPC"
     }
 }
 
-# Create a Subnet called Web1
+# Create a Subnet called Web1 
 
 resource "aws_subnet" "Web1" {
     vpc_id                  = aws_vpc.testvpc.id
